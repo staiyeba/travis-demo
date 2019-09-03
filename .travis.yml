@@ -15,6 +15,7 @@ before_install:
 
 install:
   - brew install docker
+  - docker ps
 
 before_script:
   - git clone https://git.cs.hioa.no/staiyeba/travis-test
@@ -23,6 +24,7 @@ script:
   - ls
   - chmod +x hello.sh
   - ./hello.sh
+  - docker pull scratch
 
 after_script:
   - echo "End of pipeline"
