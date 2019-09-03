@@ -1,0 +1,27 @@
+os: osx
+osx_image: xcode10.2
+
+language: bash
+
+git:
+  depth: false
+
+before_cache:
+  - brew cleanup
+
+before_install:
+  - whoami
+  - echo "Start of pipeline"
+
+install:
+  - brew install docker
+
+before_script:
+  - git clone https://git.cs.hioa.no/staiyeba/travis-test
+
+script:
+  - ls
+  - ./hello.sh
+
+after_script:
+  - echo "End of pipeline"
