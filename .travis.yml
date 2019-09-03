@@ -21,6 +21,7 @@ before_script:
 
 script:
   - ls
+  - chmod +x hello.sh
   - ./hello.sh
 
 after_script:
