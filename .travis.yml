@@ -9,9 +9,15 @@ git:
 before_cache:
   - brew cleanup
 
+cache:
+  - directories:
+    - $HOME/Library/Caches/Homebrew
+
 before_install:
   - whoami
   - echo "Start of pipeline"
+  - HOMEBREW_NO_AUTO_UPDATE=1
+
 
 install:
   - brew install docker
